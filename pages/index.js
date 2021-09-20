@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
+import { Button } from '@mui/material';
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
         <h2>this is step one, watch the tutorial</h2>
         <div className={styles.grid}>
           {' '}
-          <Link href="/step-one">
-            <a>go to record a video</a>
-          </Link>
+          <Button variant="contained">
+            <Link href="/step-one">
+              <a>go to record a video</a>
+            </Link>
+          </Button>
         </div>
       </main>
 
