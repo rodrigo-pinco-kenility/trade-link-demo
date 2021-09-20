@@ -23,7 +23,6 @@ export default function StepOne() {
       />
 
       <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
-        <button>Retry</button>
         <button style={{ marginLeft: '20px' }}>Next</button>
       </div>
     </>
