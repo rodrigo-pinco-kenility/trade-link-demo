@@ -23,7 +23,7 @@ export default function StepOne() {
       />
 
       <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
-        <button style={{ marginLeft: '20px' }}>Next</button>
+        <span>The file size is: {videoRecord.size}</span>
       </div>
     </>
   );
