@@ -9,7 +9,7 @@ export default function StepOne() {
   const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: { exact: 'environment' },
+    facingMode: 'environment',
   };
 
   const timer = React.useRef(null);
@@ -55,7 +55,7 @@ export default function StepOne() {
     <>
       <h2>this is step two, record a video</h2>
       <div className={styles.controls}>
-        <Webcam audio={true} ref={webcamRef} />
+        <Webcam audio={false} ref={webcamRef} />
         {capturing ? (
           <Button className={styles.record_button} variant="contained" onClick={handleStopCaptureClick}>
             Stop Capture
@@ -66,14 +66,8 @@ export default function StepOne() {
           </Button>
         )}
         <Timer ref={timer} startImmediately={false}>
-          {({ start, pause, stop, reset }) => (
-            <React.Fragment>
-              <div>
-                <Timer.Minutes />:
-                <Timer.Seconds />
-              </div>
-            </React.Fragment>
-          )}
+          <Timer.Minutes />:
+          <Timer.Seconds />
         </Timer>
 
         <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
