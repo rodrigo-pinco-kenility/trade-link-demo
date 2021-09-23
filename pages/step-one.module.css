@@ -1,0 +1,15 @@
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.record_button {
+  width: 5%;
+  padding: 26px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: red;
+  bottom: 120px;
+  border: 2px solid white;
+  left: 50vw;
+}
