@@ -5,6 +5,9 @@ import Webcam from 'react-webcam';
 
 import styles from './step-one.module.css';
 
+const FACING_MODE_USER = 'user';
+const FACING_MODE_ENVIRONMENT = 'environment';
+
 export default function StepOne() {
   const videoConstraints = {
     width: 1280,
@@ -18,6 +21,11 @@ export default function StepOne() {
   const mediaRecorderRef = React.useRef(null);
   const [capturing, setCapturing] = React.useState(false);
   const [recordedChunks, setRecordedChunks] = React.useState([]);
+  const [facingMode, setFacingMode] = React.useState(FACING_MODE_USER);
+
+  const handleSwitchCamera = React.useCallback(() => {
+    setFacingMode((prevState) => (prevState === FACING_MODE_USER ? FACING_MODE_ENVIRONMENT : FACING_MODE_USER));
+  }, []);
 
   const handleStartCaptureClick = React.useCallback(() => {
     timer.current.start();
@@ -65,6 +73,10 @@ export default function StepOne() {
             Start Capture
           </Button>
         )}
+
+        <Button className={styles.switch_button} variant="contained" onClick={handleSwitchCamera}>
+          Switch camera
+        </Button>
         <Timer ref={timer} startImmediately={false}>
           <Timer.Minutes />:
           <Timer.Seconds />

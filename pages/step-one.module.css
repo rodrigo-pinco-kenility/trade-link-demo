@@ -8,8 +8,19 @@
   padding: 26px;
   border-radius: 50%;
   position: fixed;
-  background-color: red;
+  background-color: #f00;
   bottom: 120px;
-  border: 2px solid white;
-  left: 50vw;
+  border: 2px solid #fff;
+  left: 45vw;
+}
+
+.switch_button {
+  width: 5%;
+  padding: 26px;
+  border-radius: 50%;
+  position: fixed;
+  background-color: #00f;
+  bottom: 120px;
+  border: 2px solid #fff;
+  left: 2vw;
 }
