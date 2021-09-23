@@ -28,7 +28,7 @@ export default function StepOne() {
     timer.current.start();
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
-      mimeType: 'video/webm',
+      mimeType: 'video/mp4',
     });
     mediaRecorderRef.current.addEventListener('dataavailable', handleDataAvailable);
     mediaRecorderRef.current.start();
