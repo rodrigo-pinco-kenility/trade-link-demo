@@ -9,6 +9,7 @@ export default function StepOne() {
   const videoConstraints = {
     width: 1280,
     height: 720,
+    facingMode: { exact: 'environment' },
   };
 
   const timer = React.useRef(null);
