@@ -24,7 +24,7 @@ export default function StepOne() {
     setFacingMode((prevState) => (prevState === FACING_MODE_USER ? FACING_MODE_ENVIRONMENT : FACING_MODE_USER));
   }, []);
 
-  const handleStartCaptureClick = React.useCallback(() => {
+  const handleStartCaptureClick = () => {
     timer.current.start();
     setCapturing(true);
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
@@ -32,7 +32,7 @@ export default function StepOne() {
     });
     mediaRecorderRef.current.addEventListener('dataavailable', handleDataAvailable);
     mediaRecorderRef.current.start();
-  }, [webcamRef, setCapturing, mediaRecorderRef]);
+  };
 
   const handleDataAvailable = ({ data }) => {
     if (data.size > 0) {
@@ -40,11 +40,11 @@ export default function StepOne() {
     }
   };
 
-  const handleStopCaptureClick = React.useCallback(() => {
-    mediaRecorderRef.current.stop();
-    setCapturing(false);
+  const handleStopCaptureClick = () => {
     timer.current.stop();
-  }, [mediaRecorderRef, setCapturing]);
+    setCapturing(false);
+    mediaRecorderRef.current.stop();
+  };
 
   const calculateTotalSize = () => {
     let size = 0;
