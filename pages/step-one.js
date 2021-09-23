@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import Timer from 'react-compound-timer/build';
 import Webcam from 'react-webcam';
 
-import styles from './step-one.module.css';
-
 const FACING_MODE_USER = 'user';
 const FACING_MODE_ENVIRONMENT = 'environment';
 
@@ -12,7 +10,6 @@ export default function StepOne() {
   const videoConstraints = {
     width: 1280,
     height: 720,
-    facingMode: 'environment',
   };
 
   const timer = React.useRef(null);
@@ -62,19 +59,19 @@ export default function StepOne() {
   return (
     <>
       <h2>this is step two, record a video</h2>
-      <div className={styles.controls}>
-        <Webcam audio={false} ref={webcamRef} />
+      <div className="controls">
+        <Webcam audio={false} ref={webcamRef} videoConstraints={{ ...videoConstraints, facingMode }} />
         {capturing ? (
-          <Button className={styles.record_button} variant="contained" onClick={handleStopCaptureClick}>
+          <Button className="recordButton" variant="contained" onClick={handleStopCaptureClick}>
             Stop Capture
           </Button>
         ) : (
-          <Button className={styles.record_button} variant="contained" onClick={handleStartCaptureClick}>
+          <Button className="recordButton" variant="contained" onClick={handleStartCaptureClick}>
             Start Capture
           </Button>
         )}
 
-        <Button className={styles.switch_button} variant="contained" onClick={handleSwitchCamera}>
+        <Button className="switchButton" onClick={handleSwitchCamera}>
           Switch camera
         </Button>
         <Timer ref={timer} startImmediately={false}>

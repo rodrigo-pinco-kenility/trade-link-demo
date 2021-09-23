@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-.record_button {
+.recordButton {
   width: 5%;
   padding: 26px;
   border-radius: 50%;
@@ -14,7 +14,7 @@
   left: 45vw;
 }
 
-.switch_button {
+.switchButton {
   width: 5%;
   padding: 26px;
   border-radius: 50%;
