@@ -3,12 +3,12 @@
   flex-direction: column;
 }
 
-.recordButton {
+.controls .recordButton {
   width: 5%;
   padding: 26px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   position: fixed;
-  background-color: #f00;
+  background-color: #f00 !important;
   bottom: 120px;
   border: 2px solid #fff;
   left: 45vw;
@@ -17,10 +17,10 @@
 .switchButton {
   width: 5%;
   padding: 26px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   position: fixed;
-  background-color: #00f;
+  background-color: #00f !important;
   bottom: 120px;
-  border: 2px solid #fff;
+  border: 2px solid #fff !important;
   left: 2vw;
 }
